@@ -1,0 +1,26 @@
+{% include "header.html" %}
+
+
+<video autoplay muted loop id="myVideo" class="background-video">
+   <source src="static/video/cropBackground.webm" type="video/mp4">
+</video>
+
+<div class="container heading">
+   <div class="row">
+      <div class="col-12">
+         <h1>Grow Smarter With Our Crop Recommendation Tool</h1>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-12">
+         <p>Maximize your yield with datadriven insights</p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-12">
+         <button type="button" class="btn btn-warning btn-lg" onclick="window.location.href='{{ url_for( 'location') }}';">Location</button>
+         <button type="button" class="btn btn-outline-warning btn-lg" onclick="window.location.href='{{ url_for( 'get_soil_data') }}';">Soil Property</button>
+      </div>
+   </div>
+</div>
+{% include "footer.html" %}

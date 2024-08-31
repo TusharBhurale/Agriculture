@@ -1,0 +1,61 @@
+{% include "header.html" %}
+
+
+<div class="container-fluid get_property_container">
+   <div class="row">
+      <img
+         src="https://www.slohia.com/wp-content/uploads/2021/05/Agriculture-Plantation-Farmhouse-Property-In-India.jpg"
+         class="get_crop_background" alt="">
+      <div class="get_property_heading">
+         <h1>Soil Properties</h1>
+      </div>
+   </div>
+   {% if result: %}
+   <div class="row recommendation border shadow p-3 mb-5 bg-white rounded">
+      <h2 class="">Recommended Crop : {{crop.upper()}}</h2>
+      <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://en.wikipedia.org/wiki/{{crop}}">
+        For More About {{crop.upper()}}
+      </a>
+    </div>
+    {% endif %}
+   <div class="row details border shadow p-3 mb-5 bg-white rounded">
+      <form action="/get_soil_data" method="POST">
+         <div class="form-group">
+            <label for="exampleInputEmail1">Enter Nitrogen in the soil</label>
+            <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="n">
+         </div>
+         <div class="form-group">
+            <label for="exampleInputEmail1"> Enter Phosphorus in the soil</label>
+            <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="p">
+         </div>
+         <div class="form-group">
+            <label for="exampleInputEmail1">Enter potassium in the soil</label>
+            <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="k">
+         </div>
+         <div class="form-group">
+            <label for="exampleInputEmail1">Enter the temperature</label>
+            <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="temp">
+         </div>
+         <div class="form-group">
+            <label for="exampleInputEmail1">Enter the humidity </label>
+            <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="humidity">
+         </div>
+         <div class="form-group">
+            <label for="exampleInputEmail1">Enter the PH Level</label>
+            <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="ph">
+         </div>
+         <div class="form-group">
+            <label for="exampleInputEmail1">Enter the RainFall</label>
+            <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="RainFall">
+         </div>
+         <button type="submit" class="btn btn-primary"
+            onclick="window.location.href='{{ url_for( 'get_soil_data') }}';">Submit</button>
+      </form>
+   </div>
+  
+</div>
+<script>
+   const navEl = document.querySelector('.navbar');
+   navEl.classList.add('navbar-dark');
+</script>
+{% include "footer.html" %}
